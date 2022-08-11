@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Recommendation</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Book Recommendation System</span></h2>
+    <div class='description'>
+      <p>A Recommendation System, Built with Flask and Deployed using Heroku.</p><br>
+        <p>(Note:This Application is Content Based Recommendation System)</p>
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+
+
+
+
+        <h2 style="text-align:center">Book Recommendation System</h2>
+        
+		
+		  <br>
+		 
+		  
+		  <h3>Type name of your favourite Book</h3>
+		  <br>
+		  
+          <input list="browsers" width="70" height="100" name="browser" id="browser" style="width: 800px; height:50px;">
+          <datalist id="browsers">
+            
+<option value="Fundamentals of Wavelets by Goswami, Jaideva">
+<option value="Data Smart by Foreman, John">
+<option value="God Created the Integers by Hawking, Stephen">
+<option value="Superfreakonomics by Dubner, Stephen">
+<option value="Orientalism by Said, Edward">
+<option value="Nature of Statistical Learning Theory, The by Vapnik, Vladimir">
+<option value="Integration of the Indian States by Menon, V P">
+<option value="Drunkard's Walk, The by Mlodinow, Leonard">
+<option value="Image Processing & Mathematical Morphology by Shih, Frank">
+<option value="How to Think Like Sherlock Holmes by Konnikova, Maria">
+<option value="Data Scientists at Work by Sebastian Gutierrez">
+<option value="Slaughterhouse Five by Vonnegut, Kurt">
+<option value="Birth of a Theorem by Villani, Cedric">
+<option value="Structure & Interpretation of Computer Programs by Sussman, Gerald">
+<option value="Age of Wrath, The by Eraly, Abraham">
+<option value="Trial, The by Kafka, Frank">
+<option value="Statistical Decision Theory' by Pratt, John">
+<option value="Data Mining Handbook by Nisbet, Robert">
+<option value="New Machiavelli, The by Wells, H. G.">
+<option value="Physics & Philosophy by Heisenberg, Werner">
+<option value="Making Software by Oram, Andy">
+<option value="Analysis, Vol I by Tao, Terence">
+<option value="Machine Learning for Hackers by Conway, Drew">
+<option value="Signal and the Noise, The by Silver, Nate">
+<option value="Python for Data Analysis by McKinney, Wes">
+<option value="Introduction to Algorithms by Cormen, Thomas">
+<option value="Beautiful and the Damned, The by Deb, Siddhartha">
+<option value="Outsider, The by Camus, Albert">
+<option value="Complete Sherlock Holmes, The - Vol I by Doyle, Arthur Conan">
+<option value="Complete Sherlock Holmes, The - Vol II by Doyle, Arthur Conan">
+<option value="Wealth of Nations, The by Smith, Adam">
+<option value="Pillars of the Earth, The by Follett, Ken">
+<option value="Mein Kampf by Hitler, Adolf">
+<option value="Tao of Physics, The by Capra, Fritjof">
+<option value="Surely You're Joking Mr Feynman by Feynman, Richard">
+<option value="Farewell to Arms, A by Hemingway, Ernest">
+<option value="Veteran, The by Forsyth, Frederick">
+<option value="False Impressions by Archer, Jeffery">
+<option value="Last Lecture, The by Pausch, Randy">
+<option value="Return of the Primitive by Rand, Ayn">
+<option value="Jurassic Park by Crichton, Michael">
+<option value="Russian Journal, A by Steinbeck, John">
+<option value="Tales of Mystery and Imagination by Poe, Edgar Allen">
+<option value="Freakonomics by Dubner, Stephen">
+<option value="Hidden Connections, The by Capra, Fritjof">
+<option value="Story of Philosophy, The by Durant, Will">
+<option value="Asami Asami by Deshpande, P L">
+<option value="Journal of a Novel by Steinbeck, John">
+<option value="Once There Was a War by Steinbeck, John">
+<option value="Moon is Down, The by Steinbeck, John">
+<option value="Brethren, The by Grisham, John">
+<option value="In a Free State by Naipaul, V. S.">
+<option value="Catch 22 by Heller, Joseph">
+<option value="Complete Mastermind, The by BBC">
+<option value="Dylan on Dylan by Dylan, Bob">
+<option value="Soft Computing & Intelligent Systems by Gupta, Madan">
+<option value="Textbook of Economic Theory by Stonier, Alfred">
+<option value="Econometric Analysis by Greene, W. H.">
+<option value="Learning OpenCV by Bradsky, Gary">
+<option value="Data Structures Using C & C++ by Tanenbaum, Andrew">
+<option value="Computer Vision, A Modern Approach by Forsyth, David">
+<option value="Principles of Communication Systems by Taub, Schilling">
+<option value="Let Us C by Kanetkar, Yashwant">
+<option value="Amulet of Samarkand, The by Stroud, Jonathan">
+<option value="Crime and Punishment by Dostoevsky, Fyodor">
+<option value="Angels & Demons by Brown, Dan">
+<option value="Argumentative Indian, The by Sen, Amartya">
+<option value="Sea of Poppies by Ghosh, Amitav">
+<option value="Idea of Justice, The by Sen, Amartya">
+<option value="Raisin in the Sun, A by Hansberry, Lorraine">
+<option value="All the President's Men by Woodward, Bob">
+<option value="Prisoner of Birth, A by Archer, Jeffery">
+<option value="Scoop! by Nayar, Kuldip">
+<option value="Ahe Manohar Tari by Deshpande, Sunita">
+<option value="Last Mughal, The by Dalrymple, William">
+<option value="Social Choice & Welfare, Vol 39 No. 1 by Various">
+<option value="Radiowaril Bhashane & Shrutika by Deshpande, P L">
+<option value="Gun Gayin Awadi by Deshpande, P L">
+<option value="Aghal Paghal by Deshpande, P L">
+<option value="Maqta-e-Ghalib by Garg, Sanjay">
+<option value="Manasa by Kale, V P">
+<option value="India from Midnight to Milennium by Tharoor, Shashi">
+<option value="Great Indian Novel, The by Tharoor, Shashi">
+<option value="O Jerusalem! by Lapierre, Dominique">
+<option value="City of Joy, The by Lapierre, Dominique">
+<option value="Freedom at Midnight by Lapierre, Dominique">
+<option value="Winter of Our Discontent, The by Steinbeck, John">
+<option value="On Education by Russell, Bertrand">
+<option value="Free Will by Harris, Sam">
+<option value="Bookless in Baghdad by Tharoor, Shashi">
+<option value="Case of the Lame Canary, The by Gardner, Earle Stanley">
+<option value="Theory of Everything, The by Hawking, Stephen">
+<option value="New Markets & Other Essays by Drucker, Peter">
+<option value="Electric Universe by Bodanis, David">
+<option value="Hunchback of Notre Dame, The by Hugo, Victor">
+<option value="Burning Bright by Steinbeck, John">
+<option value="Age of Discontuinity, The by Drucker, Peter">
+<option value="Doctor in the Nude by Gordon, Richard">
+<option value="Down and Out in Paris & London by Orwell, George">
+<option value="Identity & Violence by Sen, Amartya">
+<option value="Beyond the Three Seas by Dalrymple, William">
+<option value="Talking Straight by Iacoca, Lee">
+<option value="Maugham's Collected Short Stories, Vol 3 by Maugham, William S">
+<option value="Phantom of Manhattan, The by Forsyth, Frederick">
+<option value="Ashenden of The British Agent by Maugham, William S">
+<option value="Zen & The Art of Motorcycle Maintenance by Pirsig, Robert">
+<option value="Great War for Civilization, The by Fisk, Robert">
+<option value="We the Living by Rand, Ayn">
+<option value="Artist and the Mathematician, The by Aczel, Amir">
+<option value="History of Western Philosophy by Russell, Bertrand">
+<option value="Rationality & Freedom by Sen, Amartya">
+<option value="Clash of Civilizations and Remaking of the World Order by Huntington, Samuel">
+<option value="Uncommon Wisdom by Capra, Fritjof">
+<option value="One by Bach, Richard">
+<option value="To Sir With Love by Braithwaite">
+<option value="Half A Life by Naipaul, V S">
+<option value="Discovery of India, The by Nehru, Jawaharlal">
+<option value="Apulki by Deshpande, P L">
+<option value="Unpopular Essays by Russell, Bertrand">
+<option value="Deceiver, The by Forsyth, Frederick">
+<option value="Veil: Secret Wars of the CIA by Woodward, Bob">
+<option value="Char Shabda by Deshpande, P L">
+<option value="Rosy is My Relative by Durrell, Gerald">
+<option value="Moon and Sixpence, The by Maugham, William S">
+<option value="Short History of the World, A by Wells, H G">
+<option value="Trembling of a Leaf, The by Maugham, William S">
+<option value="Doctor on the Brain by Gordon, Richard">
+<option value="Simpsons & Their Mathematical Secrets by Singh, Simon">
+<option value="Pattern Classification by Duda, Hart">
+<option value="From Beirut to Jerusalem by Friedman, Thomas">
+<option value="Code Book, The by Singh, Simon">
+<option value="Age of the Warrior, The by Fisk, Robert">
+<option value="Numbers Behind Numb3rs, The by Devlin, Keith">
+<option value="Life in Letters, A by Steinbeck, John">
+<option value="Information, The by Gleick, James">
+<option value="Elements of Information Theory by Thomas, Joy">
+<option value="Power Electronics - Rashid by Rashid, Muhammad">
+<option value="Power Electronics - Mohan by Mohan, Ned">
+<option value="Neural Networks by Haykin, Simon">
+<option value="Grapes of Wrath, The by Steinbeck, John">
+<option value="Vyakti ani Valli by Deshpande, P L">
+<option value="Statistical Learning Theory by Vapnik, Vladimir">
+<option value="Empire of the Mughal - The Tainted Throne by Rutherford, Alex">
+<option value="Empire of the Mughal - Brothers at War by Rutherford, Alex">
+<option value="Empire of the Mughal - Ruler of the World by Rutherford, Alex">
+<option value="Empire of the Mughal - The Serpent's Tooth by Rutherford, Alex">
+<option value="Empire of the Mughal - Raiders from the North by Rutherford, Alex">
+<option value="Mossad by Baz-Zohar, Michael">
+<option value="Jim Corbett Omnibus by Corbett, Jim">
+<option value="20000 Leagues Under the Sea by Verne, Jules">
+<option value="Batatyachi Chal by Deshpande P L">
+<option value="Hafasavnuk by Deshpande P L">
+<option value="Urlasurla by Deshpande P L">
+<option value="Pointers in C by Kanetkar, Yashwant">
+<option value="Cathedral and the Bazaar, The by Raymond, Eric">
+<option value="Design with OpAmps by Franco, Sergio">
+<option value="Think Complexity by Downey, Allen">
+<option value="Devil's Advocate, The by West, Morris">
+<option value="Ayn Rand Answers by Rand, Ayn">
+<option value="Philosophy: Who Needs It by Rand, Ayn">
+<option value="Data Analysis with Open Source Tools by Janert, Phillip">
+<option value="Broca's Brain by Sagan, Carl">
+<option value="Men of Mathematics by Bell, E T">
+<option value="Oxford book of Modern Science Writing by Dawkins, Richard">
+<option value="Justice, Judiciary and Democracy by Ranjan, Sudhanshu">
+<option value="Arthashastra, The by Kautiyla">
+<option value="We the People by Palkhivala">
+<option value="We the Nation by Palkhivala">
+<option value="Courtroom Genius, The by Sorabjee">
+<option value="Dongri to Dubai by Zaidi, Hussain">
+<option value="History of England, Foundation by Ackroyd, Peter">
+<option value="City of Djinns by Dalrymple, William">
+<option value="India's Legal System by Nariman">
+<option value="More Tears to Cry by Sassoon, Jean">
+<option value="Ropemaker, The by Dickinson, Peter">
+<option value="Angels & Demons by Brown, Dan">
+<option value="Prince, The by Machiavelli">
+<option value="Eyeless in Gaza by Huxley, Aldous">
+<option value="Tales of Beedle the Bard by Rowling, J K">
+<option value="Girl with the Dragon Tattoo by Larsson, Steig">
+<option value="Girl who kicked the Hornet's Nest by Larsson, Steig">
+<option value="Girl who played with Fire by Larsson, Steig">
+<option value="Structure and Randomness by Tao, Terence">
+<option value="Image Processing with MATLAB by Eddins, Steve">
+<option value="Animal Farm by Orwell, George">
+<option value="Idiot, The by Dostoevsky, Fyodor">
+<option value="Christmas Carol, A by Dickens, Charles">
+
+
+​
+          </datalist>
+
+          
+		
+        
+		<br>
+		
+		<br>
+        
+				<input type="reset" class="my-cta-button" value="Reset the Text box">
+		
+		
+        <br>
+		
+		<br>
+
+
+       
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  <!-- Footer -->
+ <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://github.com"><i
+          class="fab fa-github fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://www.linkedin.com"><i
+          class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Saravana.</p>
+  </div>
+
+</body>
+
+</html>
