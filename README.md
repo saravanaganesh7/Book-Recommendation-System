@@ -5,7 +5,7 @@
 
 ## 📝 Overview 📝
 
-A simple Netflix Recommendation System, built using Flask and deployed on Heroku.
+A simple Book Recommendation System, built using Flask and deployed on Heroku.
 
 ## 💡 Motivation 💡
 
